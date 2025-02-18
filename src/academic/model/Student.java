@@ -41,6 +41,7 @@ public class Student {
         this.prodi = prodi;
     }
 
+    
     @Override
     public String toString() {
         return id + "|" + name + "|" + angkatan + "|" + prodi;

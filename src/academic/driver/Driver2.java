@@ -76,6 +76,8 @@ public class Driver2 {
                         // If both course and student exist, create the enrollment
                         Enrollment enrollment = new Enrollment(code, id, angkatan, semester);
                         enrollments.add(enrollment);
+                        // Output the enrollment in the required format
+                        System.out.println(code + "|" + id + "|" + angkatan + "|" + semester + "|None");
                     }
                     break;
             }

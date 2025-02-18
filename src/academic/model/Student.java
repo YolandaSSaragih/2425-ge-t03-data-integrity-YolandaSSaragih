@@ -1,7 +1,7 @@
 package academic.model;
 
 public class Student {
-    private String id;
+    private final String id; // ID should not change
     private String name;
     private String angkatan;
     private String prodi;
@@ -14,7 +14,31 @@ public class Student {
     }
 
     public String getId() {
-        return id; // Implemented method
+        return id; // Only getter, no setter
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAngkatan() {
+        return angkatan;
+    }
+
+    public void setAngkatan(String angkatan) {
+        this.angkatan = angkatan;
+    }
+
+    public String getProdi() {
+        return prodi;
+    }
+
+    public void setProdi(String prodi) {
+        this.prodi = prodi;
     }
 
     @Override

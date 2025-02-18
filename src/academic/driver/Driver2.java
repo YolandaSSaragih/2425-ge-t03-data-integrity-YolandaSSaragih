@@ -76,8 +76,6 @@ public class Driver2 {
                         // If both course and student exist, create the enrollment
                         Enrollment enrollment = new Enrollment(code, id, angkatan, semester);
                         enrollments.add(enrollment);
-                        // Output the enrollment in the required format
-                        System.out.println(code + "|" + id + "|" + angkatan + "|" + semester + "|None");
                     }
                     break;
             }
@@ -88,17 +86,17 @@ public class Driver2 {
             System.out.println(message);
         }
 
-        // Print all courses
+        // Print all courses in the order they were added
         for (Course course : courses) {
             System.out.println(course.toString());
         }
 
-        // Print all students
+        // Print all students in the order they were added
         for (Student student : students) {
             System.out.println(student.toString());
         }
 
-        // Print all enrollments
+        // Print all enrollments in the order they were added
         for (Enrollment enrollment : enrollments) {
             System.out.println(enrollment.toString() + "|None");
         }

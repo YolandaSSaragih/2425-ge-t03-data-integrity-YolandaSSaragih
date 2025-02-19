@@ -1,10 +1,5 @@
 package academic.driver;
 
-/**
- * @author 12S23017_Andrey Jonathan
- * @author 12S23050_Yolanda Saragih
- */
-
 import academic.model.Course;
 import academic.model.Student;
 import academic.model.Enrollment;
@@ -62,6 +57,7 @@ public class Driver1 {
                         String angkatan = parts[3];
                         String semester = parts[4];
 
+                        // Create the enrollment
                         Enrollment enrollment = new Enrollment(courseCode, studentId, angkatan, semester);
                         enrollments.add(enrollment);
                     }
@@ -69,14 +65,17 @@ public class Driver1 {
             }
         }
 
+        // Print all courses in the order they were added
         for (Course course : courses) {
             System.out.println(course.toString());
         }
 
+        // Print all students in the order they were added
         for (Student student : students) {
             System.out.println(student.toString());
         }
 
+        // Print all enrollments in the order they were added
         for (Enrollment enrollment : enrollments) {
             System.out.println(enrollment.toString() + "|None");
         }

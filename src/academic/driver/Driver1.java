@@ -65,10 +65,10 @@ public class Driver1 {
             }
         }
 
-        // Print all courses in the order they were added
-        for (Course course : courses) {
-            System.out.println(course.toString());
+        for (int i = courses.size() - 1; i >= 0; i--) {
+            System.out.println(courses.get(i).toString());
         }
+        
 
         // Print all students in the order they were added
         for (Student student : students) {

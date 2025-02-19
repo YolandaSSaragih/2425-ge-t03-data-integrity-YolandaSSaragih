@@ -14,27 +14,23 @@ public class Driver1 {
         int enrollmentCount = 0;
 
         while (true) {
-            String input = scanner.nextLine(); // Menghapus trim()
-
+            String input = scanner.nextLine(); 
             if (input.equals("---")) {
                 break;
             }
 
             String[] parts = input.split("#");
 
-            if (parts.length == 5) { // Sesuaikan dengan input 5 bagian
-                String command = parts[0];
+            if (parts.length == 5) {
                 String code = parts[1];
                 String id = parts[2];
                 String angkatan = parts[3];
-                String semester = parts[4]; // Meskipun input ada, outputnya tetap 'None'
+                String semester = parts[4];
 
                 Enrollment enrollment = new Enrollment(code, id, angkatan, semester);
                 enrollments[enrollmentCount] = enrollment;
                 enrollmentCount++;
 
-                // Output sesuai format yang diharapkan
-                System.out.println(command + "|" + code + "|" + id + "|" + angkatan + "|None");
             } else {
                 
             }

@@ -1,5 +1,10 @@
 package academic.driver;
 
+/**
+ * @author 12S23017_Andrey Jonathan
+ * @author 12S23050_Yolanda Saragih
+ */
+
 import academic.model.Course;
 import academic.model.Student;
 import academic.model.Enrollment;
@@ -16,7 +21,6 @@ public class Driver2 {
         ArrayList<Student> students = new ArrayList<>();
         ArrayList<Enrollment> enrollments = new ArrayList<>();
 
-        // To store invalid messages
         ArrayList<String> invalidMessages = new ArrayList<>();
 
         while (true) {
@@ -61,21 +65,17 @@ public class Driver2 {
                         String angkatan = parts[3];
                         String semester = parts[4];
 
-                        // Check if the course exists
                         Course course = findCourse(courses, code);
                         if (course == null) {
                             invalidMessages.add("invalid course|" + code);
                             break;
                         }
-
-                        // Check if the student exists
                         Student student = findStudent(students, id);
                         if (student == null) {
                             invalidMessages.add("invalid student|" + id);
                             break;
                         }
 
-                        // If both course and student exist, create the enrollment
                         Enrollment enrollment = new Enrollment(code, id, angkatan, semester);
                         enrollments.add(enrollment);
                     }
@@ -89,22 +89,18 @@ Collections.sort(courses, new Comparator<Course>() {
             }
         });
 
-        // Print all invalid messages first
         for (String message : invalidMessages) {
             System.out.println(message);
         }
 
-        // Print all courses in the order they were added
         for (Course course : courses) {
             System.out.println(course.toString());
         }
 
-        // Print all students in the order they were added
         for (Student student : students) {
             System.out.println(student.toString());
         }
 
-        // Print all enrollments in the order they were added
         for (Enrollment enrollment : enrollments) {
             System.out.println(enrollment.toString() + "|None");
         }
@@ -118,7 +114,7 @@ Collections.sort(courses, new Comparator<Course>() {
                 return course;
             }
         }
-        return null; // Course not found
+        return null;
     }
 
     private static Student findStudent(ArrayList<Student> students, String id) {
@@ -127,6 +123,6 @@ Collections.sort(courses, new Comparator<Course>() {
                 return student;
             }
         }
-        return null; // Student not found
+        return null;
     }
 }

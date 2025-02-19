@@ -5,6 +5,8 @@ import academic.model.Student;
 import academic.model.Enrollment;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Driver2 {
     public static void main(String[] args) {
@@ -80,6 +82,12 @@ public class Driver2 {
                     break;
             }
         }
+Collections.sort(courses, new Comparator<Course>() {
+            @Override
+            public int compare(Course c1, Course c2) {
+                return c1.getCode().compareTo(c2.getCode());
+            }
+        });
 
         // Print all invalid messages first
         for (String message : invalidMessages) {
